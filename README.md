@@ -1,26 +1,40 @@
-# Portfolio - Resume
+# Portfolio - Example
 ### Introduction
-Developed a personal portfolio page using HTML, CSS, and the jQuery. The page is fully responsive and works on mobile, tablet, and desktop browsers.
+Developed page using HTML, CSS(SCSS), and the jQuery. The page is fully responsive and works on mobile, tablet, and desktop browsers.
 ### Features
-* Portfolio Webpage
+* Example Webpage
 
 ### What's included
 ```
 Author/
-    |-- css
-        |-- media-queries.css
-        |-- style.css
-    |-- fonts
-        |-- Montserrat-Bold.otf
-        |-- Montserrat-Regular.otf
-    |-- img
-        |-- bg
-    |-- js
-        |-- javascriptEfects.js
-        |-- jquery-3.0.0.min.js
-    application.php
+    |-- src
+        |-- font
+            |-- OpenSans-Light.ttf
+            |-- OpenSans-Regular.ttf
+            |-- OpenSans-Semibold.ttf
+            |-- OpenSans-ExtraBold.ttf
+        |-- images
+            |-- banner.png
+            |-- banner2.png
+        |-- scss
+            |-- base
+                |-- _forms.scss
+                |-- _functions.scss
+                |-- _helpers.scss
+                |-- _mixins.scss
+                |-- _reset.scss
+                |-- _typograhy.scss
+                |-- _variables.scss
+            |-- components
+            |-- app.scss
+        |-- js
+            |-- app.js
+            |-- helpers.js
+        |-- vendor_entries
+            |-- vendor.js
+            |-- vendor.scss
+    favicon.ico
     index.html
-    Resume - Kiparenko Nikolay.pdf
     README.md
 ```
 **index.html**

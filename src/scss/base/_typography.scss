@@ -1,0 +1,92 @@
+// Typography
+
+//logo-font-Lobster_1_4
+@font-face{
+  font-family: 'Lobster_1_4';
+  src: url('fonts/Lobster_1_4.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+//base-font-OpenSans
+@font-face{
+  font-family: 'OpenSans';
+  src: url('fonts/OpenSans-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'OpenSans-Light';
+  src: url('fonts/OpenSans-Light.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'OpenSans-Semibold';
+  src: url('fonts/OpenSans-Semibold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'OpenSans-ExtraBold';
+  src: url('fonts/OpenSans-ExtraBold.ttf');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+//font-MyriadPro
+@font-face{
+  font-family: 'MyriadPro';
+  src: url('fonts/MyriadPro-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+  font-family: $headings-font-family;
+  font-weight: bold;
+  margin: 0 0 0.5em;
+  color: $headings-color;
+}
+
+h1, .h1 {
+  font-size: $h1-font-size;
+}
+
+h2, .h2 {
+  font-size: $h2-font-size;
+}
+
+h3, .h3 {
+  font-size: $h3-font-size;
+}
+
+h4, .h4 {
+  font-size: $h4-font-size;
+}
+
+h5, .h5 {
+  font-size: $h5-font-size;
+}
+
+h6, .h6 {
+  font-size: $h6-font-size;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: $base-link-color;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}

@@ -29,6 +29,7 @@ $media-expressions: (
 
 @import './bower/include-media/dist/include-media';
 
+/*----------- BEGIN - WRAPPER -----------*/
 #wrapper {
 	max-width: 100%;
 	overflow: hidden;
@@ -38,10 +39,11 @@ $media-expressions: (
 		margin: 0 auto;
 		position: relative;
 	}
-	.sec-main {
+	/*----------- BEGIN - HEADER -----------*/
+	header {
 		background-color: $white;
 	}
-	.header {
+	.header-box {
 		height: 100px;
 		@include media('>=tablet'){
 			text-align: justify;
@@ -91,7 +93,7 @@ $media-expressions: (
 			// line-height: 100px;
 		}
 	}
-	// mobile menu button
+	/* begin - mobile menu button */
 	.menuBtn {
 		height: 50px;
 		width: 50px;
@@ -146,7 +148,8 @@ $media-expressions: (
 			}
 		}
 	}
-	// main menu block
+	/* end - mobile menu button */
+	/* begin - main menu block */
 	.mainMenu {
 			margin-top: -22px;
 			@include media('<tablet'){
@@ -197,9 +200,9 @@ $media-expressions: (
 				}
 			}
 		}
-
 	}
-	// sign up button
+	/* end - main menu block */
+	/* begin - sign up button */
 	.suBtn {
 		background-color: $blue;
 		border-radius: 5px;
@@ -211,9 +214,10 @@ $media-expressions: (
 			box-sizing: border-box;
 			border-bottom: 4px solid $blue;
 		}
+		/* end - sign up button */
 	}
-
-// banner
+	/*----------- END - HEADER -----------*/
+	/*----------- BEGIN - BANNER -----------*/
 	.sec-banner {
 		.owl-carousel {
 			max-width: 1440px;
@@ -254,6 +258,7 @@ $media-expressions: (
 			}
 		}
 		position: relative;
+		/* begin - banner navigation */
 		.owl-nav {
 			position: absolute;
 			top: 50%;
@@ -309,7 +314,10 @@ $media-expressions: (
 				}
 			}
 		}
+		/* end - banner navigation */
 	}
+	/*----------- END - BANNER -----------*/
+	/*----------- BEGIN - STAFF -----------*/
 	.sec-staff {
 		overflow: hidden;
 		h3 {
@@ -345,6 +353,8 @@ $media-expressions: (
 			}
 		}
 	}
+	/*----------- END - STAFF -----------*/
+	/*----------- BEGIN - OFFER -----------*/
 	.sec-offer {
 		background-color: $light-gray;
 		overflow: hidden;
@@ -402,4 +412,174 @@ $media-expressions: (
 			}
 		}
 	}
+	/*----------- END - OFFER -----------*/
+	/*----------- BEGIN - FOOTER -----------*/
+	footer {
+		/* begin - parallax */
+		.bcg_parallax{
+			background-color: $black;
+			position: relative;
+			overflow: hidden;
+			.bcg{
+				background: url(images/footer-bg.png) no-repeat;
+				background-size: cover;
+				position: absolute;
+				width: 100%;
+				height: 140%;
+				top: 0;
+				z-index: 1;
+			}
+		}
+		/* end - parallax */
+		/* begin - footer content */
+		.contact{
+			max-width: 1200px;
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			z-index: 2;
+			overflow: hidden;
+			margin-bottom: 85px;
+			h3{
+				text-align: center;
+				color: $white;
+				font-weight: 400;
+				margin-top: 100px;
+				margin-bottom: 100px;
+			}
+			/* begin - social */
+			.social-box{
+				float: left;
+				width: 50%;
+				h4 {
+					color: $white;
+					font-family: OpenSans-Light;
+				}
+				p {
+					color: $white;
+					max-width: 430px;
+					font-size: 14px;
+					font-family: OpenSans-Light;
+					line-height: 1.5;
+				}
+				.social-icons {
+					margin: 40px 0 20px 0;
+					li{
+						display: inline-block;
+						transition: all 0.5s;
+						margin-right: 15px;
+						&:hover {
+							transform: rotate(360deg);
+						}
+						.icon {
+							border-radius: 50%;
+							text-align: center;
+							width: 42px;
+							height: 42px;
+							line-height: 42px;
+							font-size: 23px;
+							color: $white;
+							display: inline-block;
+						}
+						.facebook {
+							background-color: #3b5997;
+						}
+						.twitter {
+							background-color: #3ec2f3;
+						}
+						.google-plus {
+							background-color: #e44c41;
+						}
+					}
+				}
+				span {
+					color: $white;
+					display: inline-block;
+					width: 100%;
+					margin: 5px 0;
+					a {
+						color: $white;
+					}
+				}
+			}
+			/* begin - form */
+			.callback {
+				float: left;
+				width: 50%;
+				.callback-form {
+					margin: 0 auto;
+					overflow: hidden;
+					position: relative;
+					input {
+						width: 47.5%;
+						padding: 15px 20px;
+						color: $gray;
+						border-radius: 5px;
+						@include placeholder {
+							color: darken($light-gray, 15%);
+						}
+					}
+					.nameUser {
+						float: left;
+					}
+					.mailUser {
+						float: right;
+					}
+					.messageUser {
+						width: 100%;
+						height: 180px;
+						padding: 22px;
+						border-radius: 5px;
+						margin-top: 30px;
+						color: $gray;
+						resize: none;
+						@include placeholder {
+							color: darken($light-gray, 15%);
+						}
+					}
+					button{
+						float: right;
+						font-size: 22px;
+						min-width: 170px;
+						height: 50px;
+						border-radius: 5px;
+						background-color: $blue;
+						color: $white;
+						padding: 0 22px;
+						margin-top: 30px;
+						transition: all .5s;
+						&:hover{
+							background: $gray;
+						}
+					}
+				}
+			}
+		}
+		/* begin - form error */
+		.error{
+
+		}
+		label.error{
+			display: inline-block;
+			color: red;
+			position: absolute;
+		}
+		#text_name-error{
+			top: 13.5%;
+				left: 10px;
+		}
+		#text_email-error{
+			right: 2%;
+				top: 13.5%;
+		}
+		#text-error{
+			right: 38%;
+				bottom: 18%;
+		}
+		/* end - form error */
+		/* end - form */
+		/* end - footer content */
+	}
+	/*----------- END - FOOTER -----------*/
 }
+/*----------- END - WRAPPER -----------*/

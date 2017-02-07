@@ -1,0 +1,6 @@
+FontAwesome
+OpenSans
+MariadPro Regular
+OpenSans Semibold
+OpenSans Extrabold
+Lobster1.4

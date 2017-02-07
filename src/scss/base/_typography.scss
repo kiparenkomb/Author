@@ -2,44 +2,108 @@
 
 //logo-font-Lobster_1_4
 @font-face{
-  font-family: 'Lobster_1_4';
-  src: url('fonts/Lobster_1_4.otf');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Lobster_1_4';
+	src: url('fonts/Lobster_1_4.otf');
+	font-weight: normal;
+	font-style: normal;
 }
 //base-font-OpenSans
 @font-face{
-  font-family: 'OpenSans';
-  src: url('fonts/OpenSans-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'OpenSans';
+	src: url('fonts/OpenSans-Regular.ttf');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face{
-  font-family: 'OpenSans-Light';
-  src: url('fonts/OpenSans-Light.ttf');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'OpenSans-Light';
+	src: url('fonts/OpenSans-Light.ttf');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face{
-  font-family: 'OpenSans-Semibold';
-  src: url('fonts/OpenSans-Semibold.ttf');
-  font-weight: bold;
-  font-style: normal;
+	font-family: 'OpenSans-Semibold';
+	src: url('fonts/OpenSans-Semibold.ttf');
+	font-weight: bold;
+	font-style: normal;
 }
 @font-face{
-  font-family: 'OpenSans-ExtraBold';
-  src: url('fonts/OpenSans-ExtraBold.ttf');
-  font-weight: bolder;
-  font-style: normal;
+	font-family: 'OpenSans-ExtraBold';
+	src: url('fonts/OpenSans-ExtraBold.ttf');
+	font-weight: bolder;
+	font-style: normal;
 }
 
 //font-MyriadPro
 @font-face{
-  font-family: 'MyriadPro';
-  src: url('fonts/MyriadPro-Regular.otf');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'MyriadPro';
+	src: url('fonts/MyriadPro-Regular.otf');
+	font-weight: normal;
+	font-style: normal;
 }
+
+//font-fontello
+@font-face {
+	font-family: 'fontello';
+	src: url('fonts/fontello.eot?43021075');
+	src: url('fonts/fontello.eot?43021075#iefix') format('embedded-opentype'),
+			 url('fonts/fontello.woff2?43021075') format('woff2'),
+			 url('fonts/fontello.woff?43021075') format('woff'),
+			 url('fonts/fontello.ttf?43021075') format('truetype'),
+			 url('fonts/fontello.svg?43021075#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+		font-family: 'fontello';
+		src: url('../font/fontello.svg?43021075#fontello') format('svg');
+	}
+}
+*/
+
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	/* opacity: .8; */
+
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
+
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1em;
+
+	/* Animation center compensation - margins should be symmetric */
+	/* remove if not needed */
+	margin-left: .2em;
+
+	/* you can be more comfortable with increased icons size */
+	/* font-size: 120%; */
+
+	/* Font smoothing. That was taken from TWBS */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Uncomment for 3D effect */
+	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-right-open:before { content: '\e800'; } /* '' */
+.icon-left-open:before { content: '\e801'; } /* '' */
+.icon-twitter:before { content: '\f309'; } /* '' */
+.icon-facebook:before { content: '\f30c'; } /* '' */
+.icon-gplus:before { content: '\f30f'; } /* '' */
 
 h1, .h1,
 h2, .h2,
@@ -48,45 +112,45 @@ h4, .h4,
 h5, .h5,
 h6, .h6,
 .h {
-  font-family: $headings-font-family;
-  font-weight: bold;
-  margin: 0 0 0.5em;
-  color: $headings-color;
+	font-family: $headings-font-family;
+	font-weight: bold;
+	margin: 0 0 0.5em;
+	color: $headings-color;
 }
 
 h1, .h1 {
-  font-size: $h1-font-size;
+	font-size: $h1-font-size;
 }
 
 h2, .h2 {
-  font-size: $h2-font-size;
+	font-size: $h2-font-size;
 }
 
 h3, .h3 {
-  font-size: $h3-font-size;
+	font-size: $h3-font-size;
 }
 
 h4, .h4 {
-  font-size: $h4-font-size;
+	font-size: $h4-font-size;
 }
 
 h5, .h5 {
-  font-size: $h5-font-size;
+	font-size: $h5-font-size;
 }
 
 h6, .h6 {
-  font-size: $h6-font-size;
+	font-size: $h6-font-size;
 }
 
 p {
-  margin: 0 0 1em;
+	margin: 0 0 1em;
 }
 
 a {
-  color: $base-link-color;
-  text-decoration: none;
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
+	color: $base-link-color;
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
 }

@@ -32,6 +32,3 @@ tmp
 /wp-config.php
 /.htaccess
 /wp-content/uploads/*
-
-#files
-*.txt

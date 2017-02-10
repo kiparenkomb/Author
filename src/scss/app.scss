@@ -28,6 +28,7 @@ $media-expressions: (
 @import 'base/forms';
 
 @import './bower/include-media/dist/include-media';
+@import 'components/my-owl-carousel';
 
 /*----------- BEGIN - WRAPPER -----------*/
 #wrapper {
@@ -219,102 +220,6 @@ $media-expressions: (
 	/*----------- END - HEADER -----------*/
 	/*----------- BEGIN - BANNER -----------*/
 	.sec-banner {
-		.owl-carousel {
-			max-width: 1440px;
-			margin: 0 auto;
-		}
-		.slide {
-			background: url(images/banner.png);
-			height: 565px;
-		}
-		.content-slide {
-			position: absolute;
-			top: 45%;
-			left: 0;
-			transform: translateY(-50%);
-			width: 100%;
-			text-align: center;
-			z-index: 1;
-			color: $white;
-			h2 {
-				color: $white;
-				animation: move-h 1.5s ease 0.7s forwards;
-			}
-			p {
-				font-size: 23px;
-				max-width: 380px;
-				margin: 0 auto;
-				margin-bottom: 75px;
-				font-family: OpenSans-Light;
-				animation: move-p 1.5s ease forwards;
-			}
-			a {
-				font-size: 26px;
-				color: $white;
-				padding: 15px 40px;
-				border-radius: 5px;
-				border: 3px solid $white;
-				animation: move-a 1.5s ease forwards;
-			}
-		}
-		position: relative;
-		/* begin - banner navigation */
-		.owl-nav {
-			position: absolute;
-			top: 50%;
-			margin-top: -25px;
-			left: 0;
-			width: 100%;
-			.owl-prev,
-			.owl-next {
-				position: absolute;
-				top: 0;
-				text-indent: -99999px;
-				width: 50px;
-				height: 50px;
-				background: $white;
-				border-radius: 50%;
-				&:after, &:before {
-					content: '';
-					background-color: inherit;
-					background-color: darken($blue, 10%);
-					width: 38%;
-					position: absolute;
-					transition: all 200ms;
-				}
-			}
-			.owl-prev {
-				left: 30px;
-				&:after {
-					left: 30%;
-					height: .15em;
-					top: 18px;
-					transform: rotate(-45deg);
-				}
-				&:before {
-					left: 30%;
-					height: .1em;
-					bottom: 18px;
-					transform: rotate(45deg);
-				}
-			}
-			.owl-next {
-				right: 30px;
-				&:after {
-					left: 33%;
-					height: .15em;
-					top: 18px;
-					transform: rotate(45deg);
-				}
-				&:before {
-					left: 33%;
-					height: .1em;
-					bottom: 18px;
-					transform: rotate(-45deg);
-				}
-			}
-		}
-		/* end - banner navigation */
 	}
 	/*----------- END - BANNER -----------*/
 	/*----------- BEGIN - STAFF -----------*/
@@ -332,11 +237,46 @@ $media-expressions: (
 			margin-bottom: 110px;
 			.circle-foto {
 				background-color: $light-gray;
+				box-sizing: border-box;
+				transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+				border: 0px solid $light-gray;
 				width: 200px;
 				height: 200px;
 				border-radius: 50%;
 				margin: 0 auto;
 				margin-bottom: 70px;
+				overflow: hidden;
+				position: relative;
+				&:after, &:before {
+					content: '';
+					background-color: transparent;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transition: all 200ms;
+				}
+				&:after {
+					height: 42px;
+					width: 12px;
+					margin: -21px -6px;
+				}
+				&:before {
+					height: 12px;
+					width: 42px;
+					margin: -6px -21px;
+				}
+				img {
+					transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+				}
+				&:hover {
+					border: 25px solid $light-gray;
+					img {
+						visibility: hidden;
+					}
+					&:after, &:before {
+						background-color: $red;
+					}
+				}
 			}
 			.name {
 				margin-bottom: 5px;
@@ -378,6 +318,7 @@ $media-expressions: (
 				background-color: $gray;
 				color: $white;
 				margin: 0;
+				transition: all 500ms;
 			}
 			.price {
 				font-size: 20px;
@@ -403,6 +344,7 @@ $media-expressions: (
 					background-color: $gray;
 					border-radius: 3px;
 					font-size: 17px;
+					transition: all 500ms;
 					color: $white;
 				}
 			}

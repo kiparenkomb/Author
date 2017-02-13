@@ -27,3 +27,41 @@
 ### Production
 * `gulp production` task creates the `production/` folder in the root of the project with **build files only**;
 * It will **help you** to **create clear** instances of code for the **production** or **further implementation**.
+
+### What's included
+```
+Author/production/
+    |-- build
+        |-- fonts
+            |-- fontello.eot
+            |-- fontello.svg
+            |-- fontello.ttf
+            |-- fontello.woff
+            |-- fontello.woff2
+            |-- Lobster_1_4.otf
+            |-- MyriadPro-Regular.otf
+            |-- OpenSans-ExtraBold.ttf
+            |-- OpenSans-Light.ttf
+            |-- OpenSans-Regular.ttf
+            |-- OpenSans-Semibold.ttf
+        |-- images
+            |-- banner.png
+            |-- banner-img1.jpg
+            |-- banner-img2.jpg
+            |-- banner-img3.jpg
+            |-- banner-img4.jpg
+            |-- banner-img5.jpg
+            |-- footer-bg.jpg
+            |-- man1-320x320.jpg
+            |-- man2-320x320.jpg
+            |-- woman1-320x320.jpg
+            |-- woman2-320x320.jpg
+        |-- app.css
+        |-- vendor.css
+        |-- app.js
+        |-- vendor.js
+        favicon.ico
+        index.html
+```
+**index.html**
+This is the main html file, which is inside production/index.html

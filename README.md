@@ -60,8 +60,8 @@ Author/production/
         |-- vendor.css
         |-- app.js
         |-- vendor.js
-        favicon.ico
-        index.html
+    favicon.ico
+    index.html
 ```
 **index.html**
 This is the main html file, which is inside production/index.html

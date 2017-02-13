@@ -1,9 +1,9 @@
 {
   "name": "markup-starter-jc",
   "version": "0.1.0",
-  "homepage": "https://github.com/kiparenkomb",
+  "homepage": "https://github.com/SidKH/markup-starter",
   "authors": [
-    "Nikolai Kiparenko"
+    "Alexander Sidorenko"
   ],
   "description": "Starter kit for markup projects",
   "main": "",
@@ -23,6 +23,9 @@
     "jquery": "~2.2.0",
     "normalize-css": "~3.0.3",
     "include-media": "~1.4.2",
-    "owl.carousel": "^2.2.0"
+    "owl.carousel": "^2.2.0",
+    "jquery-validation": "^1.16.0",
+    "scrollmagic": "^2.0.5",
+    "gsap": "^1.19.1"
   }
 }

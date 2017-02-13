@@ -17,6 +17,7 @@ $(document).ready(()=> {
         loop: true,
         nav: true,
         navText: false,
+        autoHeight: true,
         onTranslated: function () {
             changeNavsThump();
         }

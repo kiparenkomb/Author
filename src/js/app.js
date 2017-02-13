@@ -51,24 +51,37 @@ import './tilt';
 		});
 
 		//form validation
-		$(function() {
-			$("#form_validation").validate({
+	
+			$(".callback-form").validate({
 				rules:{
-					text_name:{
-						required:true,
-						minlength:2
+					name:{
+						required: true,
+						minlength: 2
 					},
-					text_email:{
-						required:true,
-						email:true
+					email:{
+						required: true,
+						minlength: 5,
+						email: true
 					},
-					text:{
-						required:true,
-						minlength:5,
+					message:{
+						required: true,
+						minlength: 5
+					}
+				},
+				messages: {
+					nameUser: {
+						nameUser: "Enter your name!"
+					},
+					email: {
+						required: "Enter Your E-mail!",
+						email: "Please enter a valid E-mail!"
+					},
+					message: {
+						required: "Enter your wishes!"
 					}
 				}
 			});
-		});
+
 
 
 	});

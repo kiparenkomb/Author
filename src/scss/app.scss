@@ -1,7 +1,9 @@
 $breakpoints: (
 	'xs-phone': 320px,
 	'phone': 480px,
+	'phonebig': 600px,
 	'tablet': 768px,
+	'tabletbig': 845px,
 	'desktop': 1024px,
 	'widescreen': 1200px
 );
@@ -46,25 +48,46 @@ $media-expressions: (
 	}
 	.header-box {
 		height: 100px;
+		padding: 0 30px;
+		@include media('>desktop'){
+			padding: 0;
+		}
 		@include media('>=tablet'){
-			text-align: justify;
-			letter-spacing: 1px;
-			&::after {
-				content: '';
-				display: inline-block;
-				width: 100%;
-			}
 			.logo,
 			.mainMenu,
 			.mainMenu li,
 			.mainMenu a {
 				display: inline-block;
 			}
-			.mainMenu a {
-				padding: 0px 19px;
-				line-height: 96px;
-				&.suBtn {
-					color: $blue;
+			.mainMenu {
+				li {
+					&:hover{
+						background-color: #f8f9fb;
+					}
+				}
+				a {
+					padding: 0px 19px;
+					line-height: 100px;
+					position: relative;
+					&.suBtn {
+						color: $blue;
+					}
+					&:after{
+						content: '';
+						position: absolute;
+						left: 50%;
+						right: 50%;
+						bottom: 0px;
+						display: block;
+						height: 3px;
+						background-color: #49cbcd;
+						-webkit-transition: left .2s ease-in-out,right .2s ease-in-out;
+						transition: left .2s ease-in-out,right .2s ease-in-out;
+					}
+						&:hover:after{
+							left: 0;
+							right: 0;
+						}
 				}
 			}
 			.mainMenu,
@@ -89,6 +112,7 @@ $media-expressions: (
 		line-height: 100px;
 		padding: 0 0 0 20px;
 		text-transform: capitalize;
+		float: left;
 		@include media('>=widescreen'){
 			padding: 0;
 			// line-height: 100px;
@@ -152,7 +176,7 @@ $media-expressions: (
 	/* end - mobile menu button */
 	/* begin - main menu block */
 	.mainMenu {
-			margin-top: -22px;
+			float: right;
 			@include media('<tablet'){
 				background-color: $white;
 				position: fixed;
@@ -225,6 +249,10 @@ $media-expressions: (
 	/*----------- BEGIN - STAFF -----------*/
 	.sec-staff {
 		overflow: hidden;
+		padding: 0 50px;
+		@include media('<desktop'){
+			padding: 0;
+		}
 		h3 {
 			text-align: center;
 			padding: 105px 0 140px 0;
@@ -232,9 +260,15 @@ $media-expressions: (
 		}
 		.item-staff {
 			text-align: center;
-			width: 25%;
+			width: 100%;
 			float: left;
 			margin-bottom: 110px;
+			@include media('>tablet'){
+			width: 50%;
+			}
+			@include media('>desktop'){
+			width: 25%;
+			}
 			.circle-foto {
 				background-color: $light-gray;
 				box-sizing: border-box;
@@ -247,34 +281,44 @@ $media-expressions: (
 				margin-bottom: 70px;
 				overflow: hidden;
 				position: relative;
-				&:after, &:before {
-					content: '';
-					background-color: transparent;
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transition: all 200ms;
-				}
-				&:after {
-					height: 42px;
-					width: 12px;
-					margin: -21px -6px;
-				}
-				&:before {
-					height: 12px;
-					width: 42px;
-					margin: -6px -21px;
-				}
 				img {
 					transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+				}
+				a {
+					display: inline-block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					&:after, &:before {
+						content: '';
+						background-color: transparent;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transition: all 200ms;
+					}
+					&:after {
+						height: 42px;
+						width: 12px;
+						margin: -21px -6px;
+					}
+					&:before {
+						height: 12px;
+						width: 42px;
+						margin: -6px -21px;
+					}
 				}
 				&:hover {
 					border: 25px solid $light-gray;
 					img {
 						visibility: hidden;
 					}
-					&:after, &:before {
-						background-color: $red;
+					a {
+						&:after, &:before {
+							background-color: $red;
+						}
 					}
 				}
 			}
@@ -298,14 +342,31 @@ $media-expressions: (
 	.sec-offer {
 		background-color: $light-gray;
 		overflow: hidden;
-		padding: 118px 0 100px 0;
+		padding: 100px 50px;
+		@include media('<desktop'){
+			padding: 118px 0 100px 0;
+		}
+		.tilt-element {
+			transform-style: preserve-3d;
+			a {
+				transform: translateZ(50px) translateY(-10px);
+			}
+		}
 		.offer-box {
 			float: left;
-			width: 31.5%;
+			width: 100%;
+			padding: 0 5% 50px 5%;
 			margin-right: 2.5%;
 			text-align: center;
 			border-radius: 2px;
 			overflow: hidden;
+			@include media('>phone'){
+				padding: 0 20% 50px 20%;
+			}
+			@include media('>tablet'){
+				width: 31.5%;
+				padding: 0;
+			}
 			&:last-child {
 				margin-right: 0;
 			}
@@ -363,12 +424,13 @@ $media-expressions: (
 			position: relative;
 			overflow: hidden;
 			.bcg{
-				background: url(images/footer-bg.png) no-repeat;
+				background: url(images/footer-bg.jpg) no-repeat;
 				background-size: cover;
 				position: absolute;
 				width: 100%;
 				height: 140%;
 				top: 0;
+				// opacity: 0.2;
 				z-index: 1;
 			}
 		}
@@ -382,6 +444,13 @@ $media-expressions: (
 			z-index: 2;
 			overflow: hidden;
 			margin-bottom: 85px;
+			padding: 0 5%;
+			@include media('>phone'){
+				padding: 0 50px;
+			}
+			@include media('>desktop'){
+				padding: 0;
+			}
 			h3{
 				text-align: center;
 				color: $white;
@@ -392,7 +461,13 @@ $media-expressions: (
 			/* begin - social */
 			.social-box{
 				float: left;
-				width: 50%;
+				width: 100%;
+				text-align: center;
+				margin-bottom: 50px;
+				@include media('>tablet'){
+					width: 50%;
+					text-align: left;
+				}
 				h4 {
 					color: $white;
 					font-family: OpenSans-Light;
@@ -403,6 +478,10 @@ $media-expressions: (
 					font-size: 14px;
 					font-family: OpenSans-Light;
 					line-height: 1.5;
+					margin: 0 auto;
+					@include media('>tablet'){
+						margin: 0;
+					}
 				}
 				.social-icons {
 					margin: 40px 0 20px 0;
@@ -440,6 +519,7 @@ $media-expressions: (
 					width: 100%;
 					margin: 5px 0;
 					a {
+						cursor: pointer;
 						color: $white;
 					}
 				}
@@ -447,18 +527,26 @@ $media-expressions: (
 			/* begin - form */
 			.callback {
 				float: left;
-				width: 50%;
+				width: 100%;
+				@include media('>tablet'){
+					width: 50%;
+				}
 				.callback-form {
 					margin: 0 auto;
 					overflow: hidden;
 					position: relative;
 					input {
-						width: 47.5%;
+						position: relative;
+						width: 100%;
 						padding: 15px 20px;
 						color: $gray;
 						border-radius: 5px;
+						margin-bottom: 30px;
 						@include placeholder {
 							color: darken($light-gray, 15%);
+						}
+						@include media('>=tablet'){
+							width: 47.5%;
 						}
 					}
 					.nameUser {
@@ -468,11 +556,11 @@ $media-expressions: (
 						float: right;
 					}
 					.messageUser {
+						position: relative;
 						width: 100%;
 						height: 180px;
 						padding: 22px;
 						border-radius: 5px;
-						margin-top: 30px;
 						color: $gray;
 						resize: none;
 						@include placeholder {
@@ -498,25 +586,27 @@ $media-expressions: (
 			}
 		}
 		/* begin - form error */
-		.error{
-
+		.button-error {
+				color: $red !important;
+				background-color: green !important;
 		}
 		label.error{
 			display: inline-block;
-			color: red;
+			color: $red;
 			position: absolute;
 		}
-		#text_name-error{
-			top: 13.5%;
-				left: 10px;
+		#name-error{
+			top: 15.5%;
+			left: 10px;
 		}
-		#text_email-error{
-			right: 2%;
-				top: 13.5%;
+		#email-error{
+			top: 15.5%;
+			right: 10px;
 		}
-		#text-error{
-			right: 38%;
-				bottom: 18%;
+		#message-error{
+			left: 50%;
+			bottom: 18%;
+			transform: translateX(-50%);
 		}
 		/* end - form error */
 		/* end - form */
